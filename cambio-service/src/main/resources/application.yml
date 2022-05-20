@@ -1,0 +1,29 @@
+server:
+  port: 8000
+
+spring:
+  application:
+    name: cambio-service
+  datasource:
+    url: jdbc:h2:mem:cambio
+    driverClassName: org.h2.Driver
+    username: sa
+    password: ""
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    defer-datasource-initialization: false
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+  flyway:
+    enabled: true
+    url: jdbc:h2:mem:cambio
+    user: sa
+    password: ""
+  h2:
+    console.enabled: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

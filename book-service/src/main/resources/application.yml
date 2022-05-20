@@ -1,0 +1,29 @@
+server:
+  port: 8100
+
+resilience4j:
+  retry:
+    instances:
+      default:
+        max-attempts: 5
+
+spring:
+  application:
+    name: book-service
+  datasource:
+    url: jdbc:h2:mem:book
+    driverClassName: org.h2.Driver
+    username: sa
+    password: ""
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    defer-datasource-initialization: false
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+  flyway:
+    url: jdbc:h2:mem:book
+    user: sa
+    password: ""
+  h2:
+    console.enabled: true
